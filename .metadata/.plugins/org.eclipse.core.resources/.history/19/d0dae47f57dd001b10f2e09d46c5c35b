@@ -1,0 +1,11 @@
+package com.shopping.orderservice.dto;
+
+import com.shopping.orderservice.entity.Order;
+
+public class TransactionResponse {
+
+	private Order order;
+	private String transactionId;
+	private double amount;
+	private String message;
+}

@@ -1,0 +1,28 @@
+package com.shopping.orderservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopping.orderservice.dto.PaymentDTO;
+import com.shopping.orderservice.entity.Order;
+import com.shopping.orderservice.feign.PaymentFeign;
+import com.shopping.orderservice.repository.OrderRepository;
+
+@Service
+public class OrderService {
+ 
+	@Autowired
+	private OrderRepository orderRepo;
+	
+	@Autowired
+	private PaymentFeign paymentFeign;
+	
+	public Order saveOrder(Order order) {
+		PaymentDTO payment = new PaymentDTO();
+		payment.setOrderId(order.getId());
+		payment.setAmount(order.getPrice()*order.getQty());
+		
+		paymentFeign.doPayment(payment);
+		return orderRepo.save(order);
+	}
+}

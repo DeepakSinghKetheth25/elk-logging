@@ -1,0 +1,5 @@
+package com.shopping.orderservice.repository;
+
+public interface OrderRepository {
+
+}

@@ -1,0 +1,11 @@
+package com.shopping.orderservice.dto;
+
+public class PaymentDTO {
+
+	private int paymentId;
+	private String paymentStatus;
+	private String transactionId;
+	private  String orderId;
+	private double amount;
+	
+}

@@ -1,0 +1,18 @@
+package com.shopping.paymentservice.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.shopping.paymentservice.entity.Payment;
+import com.shopping.paymentservice.repository.PaymentRepository;
+
+@Service
+public class PaymentService {
+
+	@Autowired 
+	private PaymentRepository paymentRepository;
+	
+	public Payment doPayment(Payment payment) {
+		return paymentRepository.save(payment);
+	}
+}

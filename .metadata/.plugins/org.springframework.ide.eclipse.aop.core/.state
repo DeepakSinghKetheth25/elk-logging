@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="order-service"/>
+<aop-project name="payment-service"/>
+<aop-project name="service-registry"/>
+<aop-project name="AuthMicroService"/>
+</aop-reference-model>
